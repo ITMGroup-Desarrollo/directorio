@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/layout.astro"
+import Home from "../components/home.astro"
+import { data } from "../data/personas"
+
+
+
+const { id } = Astro.params
+const persona = data.find(p => p.id === id)
+
+if (!persona) {
+  throw new Error("No se encontró la persona");
+}
+
+export async function getStaticPaths() {
+  
+  return data.map(p => ({
+    params: { id: p.id }
+  }))
+}
+
+---
+
+<Layout>
+  <Home persona={persona} />
+
+  <!-- Script para manejar el slug y la URL -->
+  <script is:inline>
+    const data = [
+  {
+    id: "1",
+    nombre: "Juan",
+    apellido: "Pérez",
+    puesto: "Director de Tecnología",
+    correo: "juan.perez@example.com",
+  },
+  {
+    id: "2",
+    nombre: "Laura",
+    apellido: "García",
+    puesto: "Gerente de Marketing",
+    correo: "laura.garcia@example.com",
+  }
+]
+    
+    // Obtener el ID desde la URL
+    const currentId = window.location.pathname.split("/").pop(); // Obtener el ID desde la URL
+    const persona = data.find(p => p.id === currentId); // Buscar la persona correspondiente
+    // Crear el slug
+    const slug = `${persona.nombre.toLowerCase().replace(/\s+/g, "-")}-${persona.apellido.toLowerCase().replace(/\s+/g, "-")}`;
+    const currentPath = window.location.pathname;
+    const expectedPath = `/${slug}`;
+    
+    // Si la URL actual no coincide con el slug, hacer el cambio
+    if (currentPath !== expectedPath) {
+      window.history.replaceState({}, "", expectedPath);
+    }
+  </script>
+</Layout>
