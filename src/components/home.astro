@@ -1,11 +1,17 @@
 ---
-// src/components/home.astro
 const { persona } = Astro.props
 ---
 
 <div class="p-4">
   <h1 class="text-xl font-bold text-center mb-4">Executive Card</h1>
-  <p><strong>Nombre:</strong> {persona.nombre} {persona.apellido}</p>
-  <p><strong>Puesto:</strong> {persona.puesto}</p>
-  <p><strong>Correo:</strong> {persona.correo}</p>
+
+  {persona ? (
+    <>
+      <p><strong>Nombre:</strong> {persona.nombre} {persona.apellido}</p>
+      <p><strong>Puesto:</strong> {persona.puesto}</p>
+      <p><strong>Correo:</strong> {persona.correo}</p>
+    </>
+  ) : (
+    <p class="text-red-500">No se proporcionó información de la persona.</p>
+  )}
 </div>
