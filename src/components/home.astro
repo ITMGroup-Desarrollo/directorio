@@ -1,17 +1,43 @@
 ---
-const { persona } = Astro.props
+const { persona } = Astro.props;
 ---
 
-<div class="p-4">
-  <h1 class="text-xl font-bold text-center mb-4">Executive Card</h1>
+<div class="p-4 bg-blue-800 min-h-screen">
+  <h1 class="text-3xl text-white font-bold text-center mb-16 mt-16">Executive Card</h1>
 
-  {persona ? (
-    <>
-      <p><strong>Nombre:</strong> {persona.nombre} {persona.apellido}</p>
-      <p><strong>Puesto:</strong> {persona.puesto}</p>
-      <p><strong>Correo:</strong> {persona.correo}</p>
-    </>
-  ) : (
-    <p class="text-red-500">No se proporcionó información de la persona.</p>
-  )}
+  {
+    persona ? (
+      <>
+        <div class="w-full h-full flex flex-col items-center bg-blue-300 py-8">
+          <img
+            src={persona.imagen}
+            alt="Imagen de la persona"
+            class="w-48 h-48 rounded-full mx-auto mb-4"
+          />
+          <div class="text-center">
+            <p>
+              <strong>{persona.nombre} {persona.apellido}</strong> 
+            </p>
+            <p>
+              <strong>{persona.puesto}</strong> 
+            </p>
+            <p>
+              <strong>{persona.correo}</strong> 
+            </p>
+            <p>
+              <strong>{persona.celular}</strong> 
+            </p>
+          </div>
+        </div>
+      </>
+    ) : (
+      <p class="text-red-500">No se proporcionó información de la persona.</p>
+    )
+  }
 </div>
+<style>
+  p{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+</style>
