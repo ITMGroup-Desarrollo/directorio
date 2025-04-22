@@ -54,8 +54,18 @@ const { persona } = Astro.props;
                 />
               </a>
               <a
-                href={`/api/contacto.vcf?nombre=${persona.nombre}&apellido=${persona.apellido}&correo=${persona.correo}&celular=${persona.celular}&puesto=${persona.puesto}&imagen=${encodeURIComponent(persona.imagen)}`}
+                href={`data:text/vcard;charset=utf-8,${encodeURIComponent(
+                  `BEGIN:VCARD
+                    VERSION:3.0
+                    N:${persona.apellido};${persona.nombre}
+                    FN:${persona.nombre} ${persona.apellido}
+                    TITLE:${persona.puesto}
+                    TEL;TYPE=CELL:${persona.celular}
+                    EMAIL:${persona.correo}
+                    END:VCARD`
+                )}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Guardar contacto"
               >
                 <img
