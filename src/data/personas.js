@@ -6,7 +6,7 @@ export const data = [
       puesto: "Director de Tecnología",
       correo: "juan.perez@example.com",
       celular: "9983714396",
-      imagen: "src/assets/images/juan-perez.jpg"
+      imagen: "assets/images/juan-perez.jpg"
     },
     {
       id: "2",
@@ -15,7 +15,7 @@ export const data = [
       puesto: "Gerente de Marketing",
       correo: "laura.garcia@example.com",
       celular: "9983714396",
-      imagen: "src/assets/images/laura-garcia.jpg"
+      imagen: "assets/images/laura-garcia.jpg"
     }
   ];
   
