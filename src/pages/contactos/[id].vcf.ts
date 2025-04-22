@@ -1,6 +1,11 @@
-// src/pages/contactos/[id].vcf.ts
-import type { APIRoute } from "astro";
-import { data } from "../../data/personas"; // tu array de personas
+import type { APIRoute, GetStaticPaths } from "astro";
+import { data } from "../../data/personas"; // Asegúrate que la ruta sea correcta
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return data.map((persona) => ({
+    params: { id: persona.id },
+  }));
+};
 
 export const GET: APIRoute = async ({ params }) => {
   const persona = data.find(p => p.id === params.id);
