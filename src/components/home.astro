@@ -54,7 +54,7 @@ const { persona } = Astro.props;
                 />
               </a>
               <a
-                href="/contactos/juan.vcf"
+                href={`/contactos/${persona.id}.vcf`}
                 target="_blank"
                 aria-label="Guardar contacto"
               >
