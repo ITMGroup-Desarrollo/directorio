@@ -3,7 +3,9 @@ const { persona } = Astro.props;
 ---
 
 <div class="p-4 bg-blue-800 min-h-screen">
-  <h1 class="text-3xl text-white font-bold text-center mb-16 mt-16">Executive Card</h1>
+  <h1 class="text-3xl text-white font-bold text-center mb-16 mt-16">
+    Executive Card
+  </h1>
 
   {
     persona ? (
@@ -16,16 +18,20 @@ const { persona } = Astro.props;
           />
           <div class="text-center">
             <p>
-              <strong>{persona.nombre} {persona.apellido}</strong> 
+              <strong>
+                {persona.nombre} {persona.apellido}
+              </strong>
             </p>
             <p>
-              <strong>{persona.puesto}</strong> 
+              <strong>{persona.puesto}</strong>
             </p>
             <p>
-              <strong>{persona.correo}</strong> 
+              <strong>{persona.correo}</strong>
             </p>
             <p>
-              <strong>{persona.celular}</strong> 
+              <strong>
+                <a href={`tel:${persona.celular}`}>{persona.celular}</a>
+              </strong>
             </p>
           </div>
         </div>
@@ -36,7 +42,7 @@ const { persona } = Astro.props;
   }
 </div>
 <style>
-  p{
+  p {
     font-size: 1.5rem;
     margin-top: 1rem;
   }

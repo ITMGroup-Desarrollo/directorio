@@ -5,7 +5,7 @@ export const data = [
       apellido: "Pérez",
       puesto: "Director de Tecnología",
       correo: "juan.perez@example.com",
-      celular: "9983714396",
+      celular: "+529983714396",
       imagen: "/assets/images/juan-perez.jpg"
     },
     {
@@ -14,7 +14,7 @@ export const data = [
       apellido: "García",
       puesto: "Gerente de Marketing",
       correo: "laura.garcia@example.com",
-      celular: "9983714396",
+      celular: "+529983714396",
       imagen: "/assets/images/laura-garcia.jpg"
     }
   ];
