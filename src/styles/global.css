@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+.bg-container {
+  background-image: url('../assets/fondo.svg'); 
+  background-size: cover;
+  background-position: center;
+}
+.image-container {
+  background-image: url('../assets/foto.svg'); 
+  background-size: cover;
+  background-position: center;
+}
+:root{
+  --primary-color: #23346f;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+.job{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem !important;
+  margin-top: 0 !important;
+}
+.name{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem !important;
+}
+.item{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem !important;
+}

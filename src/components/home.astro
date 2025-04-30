@@ -1,69 +1,96 @@
 ---
 const { persona } = Astro.props;
+import Image from "astro/components/Image.astro";
+import fondoFoto from "../assets/foto.svg";
+import wsp from "../assets/whatsapp.svg";
+import correo from "../assets/outlook.svg";
+import contactos from "../assets/agregar.svg";
+import llamar from "../assets/llamar.svg";
+import logo from "../assets/logo.svg";
 ---
 
-<div class="p-4 bg-blue-800 min-h-screen">
-  <img src="/itm-logo-blanco.png" alt="logo" class="w-auto h-24 mx-auto my-4" />
-
+<div class="bg-container min-h-screen h-screen">
   {
     persona ? (
       <>
-        <div class="w-full h-full flex flex-col items-center bg-blue-300 py-8">
-          <img
-            src={persona.imagen}
-            alt="Imagen de la persona"
-            class="w-48 h-48 rounded-full mx-auto mb-4"
-          />
-          <div class="text-center">
-            <p>
+        <div class="w-full h-full flex flex-col items-center">
+          <div class="image-container w-full h-5/12 relative flex justify-center items-center">
+            <img
+              src={persona.imagen}
+              alt="Imagen de la persona"
+              class="w-72 h-72 rounded-full mx-auto mb-4 z-2"
+            />
+          </div>
+          <div class="text-container text-[var(--primary-color)] mb-4 text-center">
+            <p class="uppercase name text-2xl font-bold">
               <strong>
                 {persona.nombre} {persona.apellido}
               </strong>
             </p>
-            <p>
-              <strong>{persona.puesto}</strong>
-            </p>
-            <p>
-              <strong>{persona.correo}</strong>
-            </p>
-            <p>
-              <strong class="underline text-blue-600">
-                <a href={`tel:${persona.celular}`}>{persona.celular}</a>
-              </strong>
-            </p>
-            <div class="flex justify-center gap-6 mt-4">
+            <p class="uppercase job">{persona.puesto}</p>
+          </div>
+          <div class="relative flex justify-center items-center mt-4">
+            <div class="icons-container grid grid-cols-2 grid-rows-2 justify-center gap-12 mt-4">
               <a
+                class="flex flex-col items-center justify-center"
+                href={`tel:${persona.celular}`}
+                aria-label="LLamar por teléfono"
+              >
+                <Image src={llamar} alt="Correo" class="w-15 h-15 " />
+                <p class="item uppercase text-[var(--primary-color)]">
+                  Teléfono
+                </p>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center"
                 href={`https://wa.me/${persona.celular.replace(/\D/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Enviar mensaje por WhatsApp"
               >
-                <img
-                  src="/whatsapp-logo.svg"
+                <Image
+                  src={wsp}
                   alt="WhatsApp"
-                  class="w-10 h-10 hover:scale-110 transition-transform"
+                  class="w-15 h-15 hover:scale-110 transition-transform"
                 />
-              </a>
-              <a href={`mailto:${persona.correo}`} aria-label="Enviar correo">
-                <img
-                  src="/outlook-logo.svg"
-                  alt="Correo"
-                  class="w-10 h-10 hover:scale-110 transition-transform"
-                />
+                <p class="item uppercase text-[var(--primary-color)]">
+                  WhatsApp
+                </p>
               </a>
               <a
+                class="flex flex-col items-center justify-center"
+                href={`mailto:${persona.correo}`}
+                aria-label="Enviar correo"
+              >
+                <Image
+                  src={correo}
+                  alt="Correo"
+                  class="w-15 h-15 hover:scale-110 transition-transform"
+                />
+                <p class="item uppercase text-[var(--primary-color)]">Correo</p>
+              </a>
+              <a
+                class="flex flex-col items-center justify-center"
                 href={`/contactos/${persona.id}.vcf`}
                 target="_blank"
                 aria-label="Guardar contacto"
               >
-                <img
-                  src="/contactos-logo.svg"
+                <Image
+                  src={contactos}
                   alt="Guardar contacto"
-                  class="w-10 h-10 hover:scale-110 transition-transform"
+                  class="w-15 h-15 hover:scale-110 transition-transform"
                 />
+                <p class="item uppercase text-[var(--primary-color)]">
+                  Agregar
+                </p>
               </a>
             </div>
+            <div class="absolute top-0 z-10">
+              <span class="absolute inset-0 w-[2px] h-75 bg-[var(--primary-color)]  origin-center" />
+              <span class="absolute inset-0 w-[2px] h-75 bg-[var(--primary-color)] -rotate-90 origin-center" />
+            </div>
           </div>
+          <Image src={logo} alt="Logo ITM" class="w-36 h-36 " />
         </div>
       </>
     ) : (

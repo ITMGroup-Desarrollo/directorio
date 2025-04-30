@@ -1,5 +1,5 @@
 import type { APIRoute, GetStaticPaths } from "astro";
-import { data } from "../../data/personas"; // Asegúrate que la ruta sea correcta
+import { data } from "../../data/personas";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return data.map((persona) => ({
