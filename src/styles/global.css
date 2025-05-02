@@ -45,3 +45,17 @@
 .horizontal{
   margin-top: -1rem;
 }
+@Media (min-width: 768px) {
+  .name{
+    font-size: 5rem !important;
+  }
+  .job{
+    font-size: 3rem !important;
+  }
+  .item{
+    font-size: 2rem !important;
+  }
+  .horizontal{
+    margin-top: -2rem;
+  }
+}
