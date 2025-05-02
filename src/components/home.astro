@@ -30,13 +30,13 @@ import logo from "../assets/logo.svg";
             <p class="uppercase job">{persona.puesto}</p>
           </div>
           <div class="relative flex justify-center items-center mt-4">
-            <div class="icons-container grid grid-cols-2 grid-rows-2 justify-center gap-12 mt-4">
+            <div class="icons-container grid grid-cols-2 grid-rows-2 justify-center gap-8 mt-4">
               <a
                 class="flex flex-col items-center justify-center"
                 href={`tel:${persona.celular}`}
                 aria-label="LLamar por teléfono"
               >
-                <Image src={llamar} alt="Correo" class="w-15 h-15 " />
+                <Image src={llamar} alt="Correo" class="w-10 h-10 " />
                 <p class="item uppercase text-[var(--primary-color)]">
                   Teléfono
                 </p>
@@ -51,7 +51,7 @@ import logo from "../assets/logo.svg";
                 <Image
                   src={wsp}
                   alt="WhatsApp"
-                  class="w-15 h-15 hover:scale-110 transition-transform"
+                  class="w-10 h-10 hover:scale-110 transition-transform"
                 />
                 <p class="item uppercase text-[var(--primary-color)]">
                   WhatsApp
@@ -65,7 +65,7 @@ import logo from "../assets/logo.svg";
                 <Image
                   src={correo}
                   alt="Correo"
-                  class="w-15 h-15 hover:scale-110 transition-transform"
+                  class="w-10 h-10 hover:scale-110 transition-transform"
                 />
                 <p class="item uppercase text-[var(--primary-color)]">Correo</p>
               </a>
@@ -78,7 +78,7 @@ import logo from "../assets/logo.svg";
                 <Image
                   src={contactos}
                   alt="Guardar contacto"
-                  class="w-15 h-15 hover:scale-110 transition-transform"
+                  class="w-10 h-10 hover:scale-110 transition-transform"
                 />
                 <p class="item uppercase text-[var(--primary-color)]">
                   Agregar
@@ -86,11 +86,11 @@ import logo from "../assets/logo.svg";
               </a>
             </div>
             <div class="absolute top-0 z-10">
-              <span class="absolute inset-0 w-[2px] h-75 bg-[var(--primary-color)]  origin-center" />
-              <span class="absolute inset-0 w-[2px] h-75 bg-[var(--primary-color)] -rotate-90 origin-center" />
+              <span class="absolute inset-0 w-[2px] h-60 bg-[var(--primary-color)]  origin-center" />
+              <span class="absolute inset-0 w-[2px] h-60 bg-[var(--primary-color)] -rotate-90 origin-center" />
             </div>
           </div>
-          <Image src={logo} alt="Logo ITM" class="w-36 h-36 " />
+          <Image src={logo} alt="Logo ITM" class="w-32 h-32 " />
         </div>
       </>
     ) : (
