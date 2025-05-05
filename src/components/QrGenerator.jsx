@@ -65,8 +65,8 @@ export default function QrGenerator() {
 
   return (
     <div className="gen-container w-screen h-screen mx-auto text-center items-center flex flex-col justify-center">
-      <div className='opacity-container w-screen h-screen mx-auto p-4 text-center items-center flex flex-col justify-center'>
-      <div className='w-full max-w-md mx-auto mt-10 justify-center items-center flex flex-col'>
+      <div className='opacity-container w-screen h-screen mx-auto p-4 text-center items-center flex flex-col '>
+      <div className='w-full max-w-md mx-auto mt-20 justify-center items-center flex flex-col'>
         <form onSubmit={handleSubmit} className="relative w-80">
           <div className='flex flex-row relative'>
             <input
