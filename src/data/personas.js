@@ -1,8 +1,8 @@
 export const data = [
     {
       id: "1",
-      nombre: "Juan",
-      apellido: "Pérez",
+      nombre: "Paulo",
+      apellido: "Galiano",
       puesto: "Director de Tecnología",
       correo: "juan.perez@example.com",
       celular: "+529983714396",
