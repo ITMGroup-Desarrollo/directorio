@@ -77,6 +77,10 @@
   .fotoFondo{
     height: 100% !important;
   }
+  .icons-container span{
+    display: block;
+    height: 5rem;
+  }
   
 }
 @Media (min-width: 768px) and (min-height: 768px){
@@ -95,5 +99,9 @@
   }
   .persona{
     margin-top: 5rem;
+  }
+  .icons-container span{
+    display: block;
+    height: 7rem;
   }
 }

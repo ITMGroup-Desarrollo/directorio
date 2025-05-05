@@ -64,6 +64,7 @@ import logo from "../assets/logo.svg";
                       Teléfono
                     </p>
                   </a>
+                  <span class="line hidden inset-0 w-[2px]  h-20 bg-[var(--primary-color)]  origin-center" />
                   <a
                     class="flex flex-col items-center justify-center"
                     href={`https://wa.me/${persona.celular.replace(/\D/g, "")}`}
@@ -80,6 +81,7 @@ import logo from "../assets/logo.svg";
                       WhatsApp
                     </p>
                   </a>
+                  <span class="line hidden inset-0 w-[2px]  h-20 bg-[var(--primary-color)]  origin-center" />
                   <a
                     class="flex flex-col items-center justify-center"
                     href={`mailto:${persona.correo}`}
@@ -94,6 +96,7 @@ import logo from "../assets/logo.svg";
                       Correo
                     </p>
                   </a>
+                  <span class="line hidden inset-0 w-[2px]  bg-[var(--primary-color)]  origin-center" />
                   <a
                     class="flex flex-col items-center justify-center"
                     href={`/contactos/${persona.id}.vcf`}
