@@ -81,6 +81,9 @@
     display: block;
     height: 5rem;
   }
+  .plantilla-container{
+    height: auto !important;
+  }
   
 }
 @Media (min-width: 768px) and (min-height: 768px){
