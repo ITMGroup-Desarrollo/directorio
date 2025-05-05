@@ -32,6 +32,14 @@
   font-size: 1.5rem !important;
   margin-top: 0 !important;
 }
+.input-search{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1rem !important;
+}
+.descarga{
+  bottom: -30% !important;
+}
 .name{
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -44,6 +52,14 @@
 }
 .horizontal{
   margin-top: -1rem;
+}
+.gen-container{
+  background-image: url('../assets/fondo-gen.svg');
+  background-size: cover;
+}
+.opacity-container{
+  background-image: url('../assets/opacidad.svg');
+  background-size: cover;
 }
 @media (min-width: 768px) and (max-height: 768px) {
   .second-container{

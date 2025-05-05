@@ -1,4 +1,3 @@
-// src/components/QrGenerator.jsx
 import { useState } from 'react'
 import QRCode from 'qrcode'
 import { data } from '../data/personas.js'
@@ -8,6 +7,7 @@ export default function QrGenerator() {
   const [qrUrl, setQrUrl] = useState('')
   const [error, setError] = useState('')
   const [results, setResults] = useState([])
+  const [showEspacioQR, setShowEspacioQR] = useState(true) // Nuevo estado para controlar la visibilidad
 
   const handleInputChange = (e) => {
     const value = e.target.value
@@ -48,43 +48,55 @@ export default function QrGenerator() {
     e.preventDefault()
     setError('')
     setQrUrl('')
+    setShowEspacioQR(false) // Ocultar el espacioQR al iniciar el submit
+    
     const persona = data.find(({ nombre, apellido }) => {
       const q = query.trim().toLowerCase()
       return nombre.toLowerCase().includes(q) || apellido.toLowerCase().includes(q)
     })
+    
     if (!persona) {
       setError(`No se encontró nadie con "${query}".`)
+      setShowEspacioQR(true) // Mostrar nuevamente si hay error
       return
     }
     generateQRFor(persona)
   }
 
   return (
-    <div className="max-w-md mx-auto p-4">
-      <h2 className="text-xl font-bold mb-4">Generador de Código QR</h2>
-
-      <form onSubmit={handleSubmit} className="space-y-2 relative">
-        <input
-          type="text"
-          placeholder="Buscar por nombre o apellido..."
-          value={query}
-          onChange={handleInputChange}
-          className="w-full p-2 border rounded"
-        />
-        {results.length > 0 && (
-          <ul className="absolute z-10 bg-white border rounded w-full mt-1 max-h-40 overflow-auto">
-            {results.map((persona) => (
-              <li
-                key={persona.id}
-                onClick={() => handleSelect(persona)}
-                className="p-2 hover:bg-gray-100 cursor-pointer"
-              >
-                {persona.nombre} {persona.apellido}
-              </li>
-            ))}
-          </ul>
+    <div className="gen-container w-screen h-screen mx-auto text-center items-center flex flex-col justify-center">
+      <div className='opacity-container w-screen h-screen mx-auto p-4 text-center items-center flex flex-col justify-center'>
+      <div className='w-full max-w-md mx-auto mt-10 justify-center items-center flex flex-col'>
+        <form onSubmit={handleSubmit} className="relative w-80">
+          <div className='flex flex-row relative'>
+            <input
+              type="text"
+              placeholder="  Nombre o apellido"
+              value={query}
+              onChange={handleInputChange}
+              className="w-full p-2 border rounded-full bg-white input-search"
+            />
+            <img src="src/assets/lupa.svg" alt="lupa" className='w-6 h-6 absolute right-2 mr-2 mt-2'/>
+          </div>
+          {results.length > 0 && (
+            <ul className="absolute z-10 bg-white border rounded w-full mt-1 max-h-40 overflow-auto">
+              {results.map((persona) => (
+                <li
+                  key={persona.id}
+                  onClick={() => handleSelect(persona)}
+                  className="p-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  {persona.nombre} {persona.apellido}
+                </li>
+              ))}
+            </ul>
+          )}
+        </form>
+        
+        {showEspacioQR && !qrUrl && (
+          <div className='mt-12 espacioQR w-80 h-80 rounded-4xl bg-white'></div>
         )}
-      </form>
+      </div>
 
       {error && (
         <p className="mt-3 text-red-600">
@@ -93,17 +105,20 @@ export default function QrGenerator() {
       )}
 
       {qrUrl && (
-        <div className="mt-6 text-center">
-          <img src={qrUrl} alt="Código QR generado" className="mx-auto w-48 h-48" />
+        <div className="mt-12 w-full text-center relative flex flex-col items-center">
+          <div className='flex justify-center items-center w-80 h-80 rounded-4xl bg-white'>
+            <img src={qrUrl} alt="Código QR generado" className="mx-auto w-76 h-76" />
+          </div>
           <a
             href={qrUrl}
             download={`qr-${query.trim() || 'person'}.png`}
-            className="inline-block mt-4 text-blue-600 underline"
+            className="flex items-center justify-center absolute descarga text-blue-600 underline"
           >
-            Descargar QR
+            <img src="src/assets/descarga.svg" alt="descargar" className='w-10 h-10'/>
           </a>
         </div>
       )}
+      </div>
     </div>
   )
 }
