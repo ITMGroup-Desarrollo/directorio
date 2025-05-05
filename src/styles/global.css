@@ -63,9 +63,9 @@
     height: 9rem !important;
   }
   .persona{
-    width: 15rem !important;
+    width: 16rem !important;
     height: 18rem !important;
-    margin-bottom: 3rem;
+    margin-top: 1rem;
   }
   .item-image{
     width: 2.5rem !important;
@@ -83,6 +83,7 @@
     height: 5rem;
   }
   .plantilla-container{
+    margin-top: 4rem  !important;
     height: auto !important;
   }
   .image-container{
@@ -105,9 +106,9 @@
     margin-top: -2rem;
   }
   .persona{
-    margin-top: 2rem;
-    width: 20rem !important;
-    height: 23rem !important;
+    margin-top: 1rem;
+    width: 24rem !important;
+    height: 28rem !important;
   }
   .icons-container span{
     display: block;
@@ -120,7 +121,10 @@
     height: 50% !important;
   }
   .plantilla-container{
-    margin-top: 3rem  !important;
+    margin-top: 8rem  !important;
     height: 100% !important;
+  }
+  .second-container{
+    margin-top: -1rem !important;
   }
 }
