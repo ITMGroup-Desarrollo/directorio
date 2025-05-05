@@ -107,12 +107,12 @@ export default function QrGenerator() {
       {qrUrl && (
         <div className="mt-12 w-full text-center relative flex flex-col items-center">
           <div className='flex justify-center items-center w-80 h-80 rounded-4xl bg-white'>
-            <img src={qrUrl} alt="Código QR generado" className="mx-auto w-76 h-76" />
+            <img src={qrUrl} alt="Código QR generado" className="mx-auto w-76 h-76 rounded-4xl" />
           </div>
           <a
             href={qrUrl}
             download={`qr-${query.trim() || 'person'}.png`}
-            className="flex items-center justify-center absolute descarga text-blue-600 underline"
+            className="flex items-center justify-center absolute descarga"
           >
             <img src="/assets/descarga.svg" alt="descargar" className='w-10 h-10'/>
           </a>
