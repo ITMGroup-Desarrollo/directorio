@@ -63,7 +63,7 @@
     height: 9rem !important;
   }
   .persona{
-    width: 20rem !important;
+    width: 18rem !important;
     height: 20rem !important;
   }
   .item-image{
@@ -84,6 +84,9 @@
   .plantilla-container{
     height: auto !important;
   }
+  .image-container{
+    height: 50% !important;
+  }
   
 }
 @Media (min-width: 768px) and (min-height: 768px){
@@ -102,9 +105,20 @@
   }
   .persona{
     margin-top: 5rem;
+    width: 22rem !important;
+    height: 25rem !important;
   }
   .icons-container span{
     display: block;
     height: 7rem;
+  }
+  .fotoFondo{
+    height: 100% !important;
+  }
+  .image-container{
+    height: 40% !important;
+  }
+  .plantilla-container{
+    height: 100% !important;
   }
 }
