@@ -76,7 +76,7 @@ export default function QrGenerator() {
               onChange={handleInputChange}
               className="w-full p-2 border rounded-full bg-white input-search"
             />
-            <img src="src/assets/lupa.svg" alt="lupa" className='w-6 h-6 absolute right-2 mr-2 mt-2'/>
+            <img src="/assets/lupa.svg" alt="lupa" className='w-6 h-6 absolute right-2 mr-2 mt-2'/>
           </div>
           {results.length > 0 && (
             <ul className="absolute z-10 bg-white border rounded w-full mt-1 max-h-40 overflow-auto">
@@ -114,7 +114,7 @@ export default function QrGenerator() {
             download={`qr-${query.trim() || 'person'}.png`}
             className="flex items-center justify-center absolute descarga text-blue-600 underline"
           >
-            <img src="src/assets/descarga.svg" alt="descargar" className='w-10 h-10'/>
+            <img src="/assets/descarga.svg" alt="descargar" className='w-10 h-10'/>
           </a>
         </div>
       )}
