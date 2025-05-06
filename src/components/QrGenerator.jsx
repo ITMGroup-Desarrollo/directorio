@@ -13,8 +13,8 @@ export default function QrGenerator() {
     const qr = new QRCodeStyling({
       width: 300,
       height: 300,
-      type: "svg",
-      image: "/assets/logo.png",
+      type: "png",
+      image: "/assets/logo.svg",
       data: "",
       imageOptions: {
         crossOrigin: "anonymous",
@@ -155,7 +155,7 @@ export default function QrGenerator() {
               <img
                 src="/assets/logo.svg"
                 alt="logo"
-                className="logo-qr absolute  z-20 "
+                className="logo-qr absolute   "
               />
               <div
                 className="w-[300px] h-[300px]"
