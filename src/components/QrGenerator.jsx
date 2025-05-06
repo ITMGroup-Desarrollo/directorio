@@ -159,7 +159,7 @@ export default function QrGenerator() {
               />
             </div>
             {results.length > 0 && (
-              <ul className="absolute z-10 bg-white border rounded w-full mt-1 max-h-40 overflow-auto">
+              <ul className="absolute z-10 bg-white border rounded-xl w-full mt-1 max-h-40 overflow-auto">
                 {results.map((persona) => (
                   <li
                     key={persona.id}
