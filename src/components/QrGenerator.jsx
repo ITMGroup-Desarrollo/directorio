@@ -89,41 +89,41 @@ export default function QrGenerator() {
     generateQRFor(persona);
   };
 
-  const handleDownload = async () => {
-    const area = document.getElementById("download-area");
-    if (!area) return;
-  
-    const canvas = await html2canvas(area);
-    
-    // Convertir a Blob y forzar descarga
-    canvas.toBlob((blob) => {
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      
-      link.href = url;
-      link.download = `qr-${query.trim()}.jpg`;  // Usar .jpg para mejor compatibilidad
-      
-      // Forzar descarga en móviles
-      document.body.appendChild(link);
-      link.click();
-      
-      // Limpieza
-      setTimeout(() => {
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-      }, 100);
-    }, 'image/jpeg', 0.95);  // Calidad 95% para reducir peso
-  };
   // const handleDownload = async () => {
   //   const area = document.getElementById("download-area");
   //   if (!area) return;
-
+  
   //   const canvas = await html2canvas(area);
-  //   const link = document.createElement("a");
-  //   link.download = `qr-${query.trim()}.png`;
-  //   link.href = canvas.toDataURL("image/png");
-  //   link.click();
+    
+  //   // Convertir a Blob y forzar descarga
+  //   canvas.toBlob((blob) => {
+  //     const url = URL.createObjectURL(blob);
+  //     const link = document.createElement("a");
+      
+  //     link.href = url;
+  //     link.download = `qr-${query.trim()}.jpg`;  // Usar .jpg para mejor compatibilidad
+      
+  //     // Forzar descarga en móviles
+  //     document.body.appendChild(link);
+  //     link.click();
+      
+  //     // Limpieza
+  //     setTimeout(() => {
+  //       document.body.removeChild(link);
+  //       URL.revokeObjectURL(url);
+  //     }, 100);
+  //   }, 'image/jpeg', 0.95);  // Calidad 95% para reducir peso
   // };
+  const handleDownload = async () => {
+    const area = document.getElementById("download-area");
+    if (!area) return;
+
+    const canvas = await html2canvas(area);
+    const link = document.createElement("a");
+    link.download = `qr-${query.trim()}.jpg`;
+    link.href = canvas.toDataURL("image/jpg", 0.95);
+    link.click();
+  };
   return (
     <div  className="w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
       <form onSubmit={handleSubmit} className="relative w-80 top-15 md:top-5 absolute z-2">
