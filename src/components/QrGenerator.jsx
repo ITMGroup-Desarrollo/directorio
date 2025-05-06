@@ -95,8 +95,8 @@ export default function QrGenerator() {
 
     const canvas = await html2canvas(area);
     const link = document.createElement("a");
-    link.download = `qr-${query.trim()}.png`;
-    link.href = canvas.toDataURL("image/png");
+    link.download = `qr-${query.trim()}.jpg`;
+    link.href = canvas.toDataURL("image/jpeg", 1.0);
     link.click();
   };
 
@@ -109,7 +109,7 @@ export default function QrGenerator() {
                 placeholder="  Nombre o apellido"
                 value={query}
                 onChange={handleInputChange}
-                className="w-full p-2 rounded-full bg-white input-search"
+                className="w-full p-2 rounded-full pl-5 bg-white input-search"
               />
               <img
                 src="/assets/lupa.svg"
@@ -140,7 +140,7 @@ export default function QrGenerator() {
               <img
                 src="/assets/logo.svg"
                 alt="logo"
-                className=" absolute w-36 h-36 "
+                className=" absolute w-36 h-auto z-20 "
               />
               <div
                 className="w-[300px] h-[300px]"
