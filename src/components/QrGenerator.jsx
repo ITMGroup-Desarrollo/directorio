@@ -114,16 +114,34 @@ export default function QrGenerator() {
   //     }, 100);
   //   }, 'image/jpeg', 0.95);  // Calidad 95% para reducir peso
   // };
+  // const handleDownload = async () => {
+  //   const area = document.getElementById("download-area");
+  //   if (!area) return;
+
+  //   const canvas = await html2canvas(area);
+  //   const link = document.createElement("a");
+  //   link.download = `qr-${query.trim()}.png`;
+  //   link.href = canvas.toDataURL("image/png");
+  //   link.click();
+  // };
   const handleDownload = async () => {
     const area = document.getElementById("download-area");
     if (!area) return;
-
-    const canvas = await html2canvas(area);
-    const link = document.createElement("a");
-    link.download = `qr-${query.trim()}.png`;
-    link.href = canvas.toDataURL("image/png");
-    link.click();
+  
+    // Asegurarse que el logo esté completamente cargado
+    const logoImg = new Image();
+    logoImg.src = "/assets/logo.png";
+    logoImg.crossOrigin = "anonymous";
+  
+    logoImg.onload = async () => {
+      const canvas = await html2canvas(area);
+      const link = document.createElement("a");
+      link.download = `qr-${query.trim()}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    };
   };
+  
   return (
     <div  className="w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
       <form onSubmit={handleSubmit} className="relative w-80 top-15 md:top-5 absolute z-2">
