@@ -95,8 +95,8 @@ export default function QrGenerator() {
 
     const canvas = await html2canvas(area);
     const link = document.createElement("a");
-    link.download = `qr-${query.trim()}.png`;
-    link.href = canvas.toDataURL("image/png");
+    link.download = `qr-${query.trim()}.jpg`;
+    link.href = canvas.toDataURL("image/jpg");
     link.click();
   };
 
