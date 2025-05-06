@@ -14,7 +14,7 @@ export default function QrGenerator() {
       width: 300,
       height: 300,
       type: "svg",
-      image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAF5UlEQVR4Xu2bvYtcRRTHP1+MoihgoXyg0eCCiAf6gK1FF2FSrkDY10oHdoCv4At3aCf6g2R9D2Ig0VY6IQJVURRd0H9QfKJJNne/5szs7q7Ozt+/szZzfn3nu/vmfef+Z37rfvwGpF1uxu+OXJAIr3BjjCdwDl9IHKkKcGlB+eMRe7cc0A3uhYxz2rRkYBf0EcsM5uRu5RGy9DEAKM9iJm+PY0+7kdPyOcHNu06HYz5NB+TGnEkDTz/DO4HPZC8NtdlG4bfvh8Ax3wiBo7RS1sK7i7QAJ7yPN/d4UPvoX9gHl3kRyfjNyEY+1rVgLg1veU2bC/urTAYtLvh+bIWs/v1ziqTWwkeNjEvxW/F9a1GgBGZsTdcPjR5KzSR1XYJK7nw+6F8RXLKyQ3Sz8Cy/fkEGes+K2xhN0RMg4jQUL07Qv9xDkGvvTq9RQWmxe0pmv4/V++HRgobWFm6muvqBdyaeZPWtUtMSZ9UlZrMf5+N+W9T9egDrGvjXPcFo3cRnWqorP3gWzDjZZGbDNypURu9G2GHtZ7QjySpsczbWx6cZNuSbEey12KHvmtxHwNlye7lQ0aZQUbe7lKTnGE5gUs9KxOuzYKr6IsBrD1ldZlBbv5q/whRfUQ+DO6VrJ8FsPqzUFDhnCV0oy/5Wa2lI5gaDEv5XQn0ZqNl9KhkS+HU8hxAq2dDg8qpEbJX3ckj2WsyEdAYFlXFo3HcJjfpWD6eWY9G8p69I8fHtjVGFFSmK2j/ow0axhYmOSraUCPiDnGTk6Cz7cSSptQnJuxMHRbsPHW3j4gZHxt/fD1a50DXc3Pbov/FC+GSfneW7zJ2g5R+U5fp9MNhtONgpeRPZasrCE3alXybdJ/l02nR9ZYRAuLSmZB5p+8wDMe73WnZYQMyNLJx3HmyX2llLIpyoNPKWyHLGVVWDkqZ4qg0sJvOgt0IbUV6shbWwq+1+KGGU97QEG+9nW49vAhKoROSe4oPPuMdP70cxvkskYax0p6yFKNTS1hvglkh33vKkhulWd+XvltCPcXbGyVmRFk+clZqpMfPYiFlH8Em1qIauON9h7VX4N99+Ns7WLrE+3UDXw6ce9WvSeEez5YqgVqYwCr0vbg0zXRnmbQccOpFcvO1UdoXL5WdAm+c9I2NgWPDP7EY8TY7p0x6PIdQ74EEsjcIjUSr0zkobZ09nO0m1u5v1If6m0Mju5d84OSbKy9A9qS6qEnK3nR30Oj4qxYd5+eSo/N4ptBpbMvEvxt/EovEzzhr+C1XW0frPhsAAAAASUVORK5CYII=",
+      image: "/assets/logo.png",
       data: "",
       imageOptions: {
         crossOrigin: "anonymous",
