@@ -38,11 +38,20 @@
   font-size: 1rem !important;
 }
 .descarga{
-  bottom: -30% !important;
+  bottom: -20% !important;
 }
 .name{
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
+  font-size: 2.5rem !important;
+}
+.poppins{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+.full-name{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   font-size: 2.5rem !important;
 }
 .item{
@@ -120,6 +129,9 @@
   .image-container{
     height: 50% !important;
   }
+  .descarga{
+    bottom: -10% !important;
+  }
   
 }
 @Media (min-width: 768px) and (min-height: 768px){
@@ -157,5 +169,8 @@
   }
   .second-container{
     margin-top: -1rem !important;
+  }
+  .poppins{
+    margin-top: 4rem !important;  
   }
 }

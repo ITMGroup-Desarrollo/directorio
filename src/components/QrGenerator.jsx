@@ -1,49 +1,21 @@
-import { useState } from "react";
-import QRCode from "qrcode";
-import { data } from "../data/personas.js";
+import { useState, useEffect } from "react";
 import QRCodeStyling from "qr-code-styling";
+import { data } from "../data/personas.js";
+import html2canvas from "html2canvas";
 
 export default function QrGenerator() {
   const [query, setQuery] = useState("");
-  const [qrUrl, setQrUrl] = useState("");
-  const [error, setError] = useState("");
   const [results, setResults] = useState([]);
-  const [showEspacioQR, setShowEspacioQR] = useState(true); // Nuevo estado para controlar la visibilidad
+  const [error, setError] = useState("");
+  const [qrInstance, setQrInstance] = useState(null);
 
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-    setError("");
-    setQrUrl("");
-    if (value.trim()) {
-      const q = value.trim().toLowerCase();
-      const matches = data.filter(
-        ({ nombre, apellido }) =>
-          nombre.toLowerCase().includes(q) || apellido.toLowerCase().includes(q)
-      );
-      setResults(matches);
-    } else {
-      setResults([]);
-    }
-  };
-
-  const handleSelect = (persona) => {
-    setQuery(`${persona.nombre} ${persona.apellido}`);
-    setResults([]);
-    generateQRFor(persona);
-  };
-
-  const generateQRFor = async (persona) => {
-    setError("");
-    setQrUrl(""); // Ya no se usa directamente, pero lo dejamos si decides alternar
-    const url = `https://executive-cards.netlify.app/${persona.id}/`;
-
+  useEffect(() => {
     const qr = new QRCodeStyling({
       width: 300,
       height: 300,
       type: "svg",
-      data: url,
       image: "/assets/logo.svg",
+      data: "",
       imageOptions: {
         crossOrigin: "anonymous",
         margin: 3,
@@ -65,48 +37,79 @@ export default function QrGenerator() {
         color: "#ffffff",
       },
     });
+    setQrInstance(qr);
+  }, []);
 
-    // Montar en el div
-    const qrContainer = document.getElementById("styled-qr");
-    if (qrContainer) {
-      qrContainer.innerHTML = ""; // Limpia anterior
-      qr.append(qrContainer);
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setQuery(value);
+    setError("");
+    if (value.trim()) {
+      const q = value.trim().toLowerCase();
+      const matches = data.filter(
+        ({ nombre, apellido }) =>
+          nombre.toLowerCase().includes(q) || apellido.toLowerCase().includes(q)
+      );
+      setResults(matches);
+    } else {
+      setResults([]);
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setQrUrl("");
-    setShowEspacioQR(false); // Ocultar el espacioQR al iniciar el submit
+  const handleSelect = (persona) => {
+    setQuery(`${persona.nombre} ${persona.apellido}`);
+    setResults([]);
+    generateQRFor(persona);
+  };
 
+  const generateQRFor = (persona) => {
+    const url = `https://executive-cards.netlify.app/${persona.id}/`;
+    if (qrInstance) {
+      qrInstance.update({ data: url });
+      const qrContainer = document.getElementById("styled-qr");
+      if (qrContainer) {
+        qrContainer.innerHTML = "";
+        qrInstance.append(qrContainer);
+      }
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const persona = data.find(({ nombre, apellido }) => {
       const q = query.trim().toLowerCase();
       return (
         nombre.toLowerCase().includes(q) || apellido.toLowerCase().includes(q)
       );
     });
-
     if (!persona) {
-      setError(`No se encontró nadie con "${query}".`);
-      setShowEspacioQR(true); // Mostrar nuevamente si hay error
+      setError(`No se encontr\u00f3 nadie con "${query}".`);
       return;
     }
     generateQRFor(persona);
   };
 
+  const handleDownload = async () => {
+    const area = document.getElementById("download-area");
+    if (!area) return;
+
+    const canvas = await html2canvas(area);
+    const link = document.createElement("a");
+    link.download = `qr-${query.trim()}.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  };
+
   return (
-    <div className="gen-container w-screen h-screen mx-auto text-center items-center flex flex-col justify-center">
-      <div className="opacity-container w-screen h-screen mx-auto p-4 text-center items-center flex flex-col ">
-        <div className="w-full max-w-md mx-auto mt-20 md:mt-5 justify-center items-center flex flex-col">
-          <form onSubmit={handleSubmit} className="relative w-80">
+    <div  className="gen-container w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
+      <form onSubmit={handleSubmit} className="relative w-80 top-15 md:top-5 absolute z-2">
             <div className="flex flex-row relative">
               <input
                 type="text"
                 placeholder="  Nombre o apellido"
                 value={query}
                 onChange={handleInputChange}
-                className="w-full p-2  rounded-full bg-white input-search"
+                className="w-full p-2 rounded-full bg-white input-search"
               />
               <img
                 src="/assets/lupa.svg"
@@ -128,34 +131,42 @@ export default function QrGenerator() {
               </ul>
             )}
           </form>
-
+    <div id="download-area"  className="gen-container absolute w-screen h-screen mx-auto text-center items-center flex flex-col justify-center z-1">
+    <div  className="opacity-container w-screen h-screen mx-auto p-4 text-center items-center flex flex-col ">
+        <div className="w-full max-w-md mx-auto mt-20 md:mt-5 justify-center items-center flex flex-col">
           
         </div>
 
         {error && <p className="mt-3 text-red-600">{error}</p>}
 
-        {!error && (
+        {!error && query && (
           <div className="mt-12 w-full text-center relative flex flex-col items-center">
-            <div className="flex justify-center items-center w-80 h-80 rounded-4xl bg-white">
+            <div
+              id="download-area"
+              className="flex flex-col items-center justify-center bg-white p-4 rounded-4xl shadow-md"
+            >
+              
               <div
                 id="styled-qr"
-                className="w-76 h-76 rounded-4xl transition-all duration-500 ease-in-out opacity-0 scale-95 animate-fadeIn"
+                className="w-[300px] h-[300px] rounded-4xl transition-all duration-500 ease-in-out"
               ></div>
             </div>
-            <a
-              href={qrUrl}
-              download={`qr-${query.trim() || "person"}.png`}
+            <h2 className="mt-8 md:mt-4 text-lg font-bold mb-2 poppins full-name text-white">{query}</h2>
+            <button
+              type="button"
+              onClick={handleDownload}
               className="flex items-center justify-center absolute descarga"
             >
               <img
                 src="/assets/descarga.svg"
                 alt="descargar"
-                className="w-10 h-10  transition-all duration-500 ease-in-out opacity-0 scale-95 animate-fadeIn"
+                className="w-10 h-10 transition-all duration-500 ease-in-out animate-fadeIn"
               />
-            </a>
+            </button>
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }
