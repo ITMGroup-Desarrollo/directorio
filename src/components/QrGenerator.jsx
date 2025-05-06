@@ -133,8 +133,15 @@ export default function QrGenerator() {
           </form>
     <div id="download-area"  className="gen-container absolute w-screen h-screen mx-auto text-center items-center flex flex-col justify-center z-1">
     <div  className="opacity-container w-screen h-screen mx-auto p-4 text-center items-center flex flex-col ">
-        <div className="w-full max-w-md mx-auto mt-20 md:mt-5 justify-center items-center flex flex-col">
-          
+        <div className="w-full max-w-md mx-auto mt-20 md:mt-5 justify-center items-center flex flex-col relative">
+        <div
+              className="flex flex-col top-12 absolute items-center justify-center bg-white p-4 rounded-4xl shadow-md"
+            >
+              
+              <div
+                className="w-[300px] h-[300px] rounded-4xl transition-all duration-500 ease-in-out"
+              ></div>
+            </div>
         </div>
 
         {error && <p className="mt-3 text-red-600">{error}</p>}
