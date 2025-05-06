@@ -13,8 +13,8 @@ export default function QrGenerator() {
     const qr = new QRCodeStyling({
       width: 300,
       height: 300,
-      type: "png",
-      image: "/assets/logo.png",
+      type: "svg",
+      image: "/assets/logo.svg",
       data: "",
       imageOptions: {
         crossOrigin: "anonymous",
@@ -128,7 +128,6 @@ export default function QrGenerator() {
     const area = document.getElementById("download-area");
     if (!area) return;
   
-    // Asegurarse que el logo esté completamente cargado
     const logoImg = new Image();
     logoImg.src = "/assets/logo.png";
     logoImg.crossOrigin = "anonymous";
