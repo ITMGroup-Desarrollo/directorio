@@ -155,7 +155,7 @@ export default function QrGenerator() {
               <img
                 src="/assets/logo.svg"
                 alt="logo"
-                className=" absolute w-24 h-auto z-20 "
+                className="logo-qr absolute  z-20 "
               />
               <div
                 className="w-[300px] h-[300px]"
