@@ -14,7 +14,7 @@ export default function QrGenerator() {
       width: 300,
       height: 300,
       type: "svg",
-      image: "/assets/logo.svg",
+      image: "/assets/logo-solofondo.png",
       data: "",
       imageOptions: {
         crossOrigin: "anonymous",
