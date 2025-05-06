@@ -161,7 +161,7 @@ export default function QrGenerator() {
                 className="w-[300px] h-[300px] rounded-4xl transition-all duration-500 ease-in-out"
               ></div>
             </div>
-            <h2 className="mt-8 md:mt-4 text-lg font-bold mb-2 poppins full-name text-white">{query}</h2>
+            <h2 className="mt-4 text-lg font-bold mb-2 poppins full-name text-white">{query}</h2>
             <button
               type="button"
               onClick={handleDownload}
