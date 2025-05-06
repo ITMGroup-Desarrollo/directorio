@@ -13,7 +13,7 @@ export default function QrGenerator() {
     const qr = new QRCodeStyling({
       width: 300,
       height: 300,
-      type: "png",
+      type: "canvas",
       image: "/assets/logo.svg",
       data: "",
       imageOptions: {
@@ -120,8 +120,8 @@ export default function QrGenerator() {
 
     const canvas = await html2canvas(area);
     const link = document.createElement("a");
-    link.download = `qr-${query.trim()}.jpg`;
-    link.href = canvas.toDataURL("image/jpg", 0.95);
+    link.download = `qr-${query.trim()}.png`;
+    link.href = canvas.toDataURL("image/png");
     link.click();
   };
   return (
