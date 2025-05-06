@@ -14,7 +14,7 @@ export default function QrGenerator() {
       width: 300,
       height: 300,
       type: "svg",
-      image: "/assets/logo.svg",
+      image: "/assets/logo.png",
       data: "",
       imageOptions: {
         crossOrigin: "anonymous",
@@ -101,7 +101,7 @@ export default function QrGenerator() {
   };
 
   return (
-    <div  className="gen-container w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
+    <div  className="w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
       <form onSubmit={handleSubmit} className="relative w-80 top-15 md:top-5 absolute z-2">
             <div className="flex flex-row relative">
               <input
@@ -139,11 +139,11 @@ export default function QrGenerator() {
             >
               <img
                 src="/assets/logo.svg"
-                alt="descargar"
-                className=" absolute w-36 h-36 transition-all duration-500 ease-in-out animate-fadeIn"
+                alt="logo"
+                className=" absolute w-36 h-36 "
               />
               <div
-                className="w-[300px] h-[300px] rounded-4xl transition-all duration-500 ease-in-out"
+                className="w-[300px] h-[300px]"
               ></div>
             </div>
         </div>
@@ -153,7 +153,6 @@ export default function QrGenerator() {
         {!error && query && (
           <div className="mt-12 w-full text-center relative flex flex-col items-center">
             <div
-              id="download-area"
               className="flex flex-col items-center justify-center bg-white p-4 rounded-4xl shadow-md"
             >
               
