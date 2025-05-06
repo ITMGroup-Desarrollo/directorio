@@ -92,12 +92,27 @@ export default function QrGenerator() {
   const handleDownload = async () => {
     const area = document.getElementById("download-area");
     if (!area) return;
-
+  
     const canvas = await html2canvas(area);
-    const link = document.createElement("a");
-    link.download = `qr-${query.trim()}.jpg`;
-    link.href = canvas.toDataURL("image/jpeg", 1.0);
-    link.click();
+    
+    // Crear un blob en lugar de data URL
+    canvas.toBlob((blob) => {
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      
+      link.href = url;
+      link.download = `qr-${query.trim()}.jpeg`;
+      
+      // Forzar click en móviles
+      document.body.appendChild(link);
+      link.click();
+      
+      // Limpieza
+      setTimeout(() => {
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }, 100);
+    }, 'image/jpeg', 1.0);
   };
 
   return (
@@ -140,7 +155,7 @@ export default function QrGenerator() {
               <img
                 src="/assets/logo.svg"
                 alt="logo"
-                className=" absolute w-36 h-auto z-20 "
+                className=" absolute w-24 h-auto z-20 "
               />
               <div
                 className="w-[300px] h-[300px]"
