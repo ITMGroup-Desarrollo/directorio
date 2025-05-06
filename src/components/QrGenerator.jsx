@@ -179,9 +179,9 @@ export default function QrGenerator() {
               className="flex flex-col top-12 absolute items-center justify-center bg-white p-4 rounded-4xl shadow-md"
             >
               <img
-                src="/assets/logo.svg"
+                src="/assets/logo.png"
                 alt="logo"
-                className="logo-qr absolute  z-20 h-5"
+                className="logo-qr absolute  z-20 h-20"
               />
               <div
                 className="w-[300px] h-[300px]"
