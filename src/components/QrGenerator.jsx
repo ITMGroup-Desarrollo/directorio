@@ -137,7 +137,11 @@ export default function QrGenerator() {
         <div
               className="flex flex-col top-12 absolute items-center justify-center bg-white p-4 rounded-4xl shadow-md"
             >
-              
+              <img
+                src="/assets/logo.svg"
+                alt="descargar"
+                className=" absolute w-36 h-36 transition-all duration-500 ease-in-out animate-fadeIn"
+              />
               <div
                 className="w-[300px] h-[300px] rounded-4xl transition-all duration-500 ease-in-out"
               ></div>
