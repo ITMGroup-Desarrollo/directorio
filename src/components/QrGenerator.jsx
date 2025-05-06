@@ -13,8 +13,8 @@ export default function QrGenerator() {
     const qr = new QRCodeStyling({
       width: 300,
       height: 300,
-      type: "canvas",
-      image: "/assets/logo.svg",
+      type: "png",
+      image: "/assets/logo.png",
       data: "",
       imageOptions: {
         crossOrigin: "anonymous",
