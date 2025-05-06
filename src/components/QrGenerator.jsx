@@ -95,15 +95,15 @@ export default function QrGenerator() {
   
     const canvas = await html2canvas(area);
     
-    // Crear un blob en lugar de data URL
+    // Convertir a Blob y forzar descarga
     canvas.toBlob((blob) => {
-      const link = document.createElement("a");
       const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
       
       link.href = url;
-      link.download = `qr-${query.trim()}.jpeg`;
+      link.download = `qr-${query.trim()}.jpg`;  // Usar .jpg para mejor compatibilidad
       
-      // Forzar click en móviles
+      // Forzar descarga en móviles
       document.body.appendChild(link);
       link.click();
       
@@ -112,9 +112,18 @@ export default function QrGenerator() {
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
       }, 100);
-    }, 'image/jpeg', 1.0);
+    }, 'image/jpeg', 0.95);  // Calidad 95% para reducir peso
   };
+  // const handleDownload = async () => {
+  //   const area = document.getElementById("download-area");
+  //   if (!area) return;
 
+  //   const canvas = await html2canvas(area);
+  //   const link = document.createElement("a");
+  //   link.download = `qr-${query.trim()}.png`;
+  //   link.href = canvas.toDataURL("image/png");
+  //   link.click();
+  // };
   return (
     <div  className="w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
       <form onSubmit={handleSubmit} className="relative w-80 top-15 md:top-5 absolute z-2">
