@@ -113,7 +113,7 @@ export default function QrGenerator() {
     <div className="w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
       <form
         onSubmit={handleSubmit}
-        className="relative w-80 top-15 md:top-5 absolute z-2"
+        className="relative w-80 top-12 md:top-5 absolute z-2"
       >
         <div className="flex flex-row relative">
           <input
@@ -148,7 +148,7 @@ export default function QrGenerator() {
         className="gen-container absolute w-screen h-screen mx-auto text-center items-center flex flex-col justify-center z-1"
       >
         <div className="opacity-container w-screen h-screen mx-auto p-4 text-center items-center flex flex-col ">
-          <div className="w-full max-w-md mx-auto mt-20 md:mt-5 justify-center items-center flex flex-col relative">
+          <div className="w-full max-w-md mx-auto mt-15 md:mt-5 justify-center items-center flex flex-col relative">
             <div className="flex flex-col top-12 absolute items-center justify-center bg-white p-4 rounded-4xl shadow-md">
               <img
                 src="/assets/logo.png"
@@ -171,10 +171,10 @@ export default function QrGenerator() {
               </div>
               {selectedPersona && (
                 <>
-                  <h2 className="uppercase mt-2 text-lg poppins full-name text-white">
+                  <h2 className="uppercase mt-2 text-lg poppins mb-1 full-name text-white">
                     {selectedPersona.nombre} {selectedPersona.apellido}
                   </h2>
-                  <h3 className="uppercase text-xl poppins mb-1 text-white">
+                  <h3 className="uppercase text-xl poppins mb-2 text-white">
                     {selectedPersona.puesto}
                   </h3>
                 </>
