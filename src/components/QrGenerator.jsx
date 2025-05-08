@@ -15,7 +15,7 @@ export default function QrGenerator() {
       width: 300,
       height: 300,
       type: "svg",
-      image: "/assets/logo-solofondo.png",
+      image: "/directorio/assets/logo-solofondo.png",
       data: "",
       imageOptions: {
         crossOrigin: "anonymous",
@@ -97,7 +97,7 @@ export default function QrGenerator() {
     if (!area) return;
 
     const logoImg = new Image();
-    logoImg.src = "/assets/logo.png";
+    logoImg.src = "/directorio/assets/logo.png";
     logoImg.crossOrigin = "anonymous";
 
     logoImg.onload = async () => {
@@ -124,7 +124,7 @@ export default function QrGenerator() {
             className="w-full p-2 rounded-full pl-5 bg-white input-search"
           />
           <img
-            src="/assets/lupa.svg"
+            src="/directorio/assets/lupa.svg"
             alt="lupa"
             className="w-6 h-6 absolute right-2 mr-2 mt-2"
           />
@@ -151,7 +151,7 @@ export default function QrGenerator() {
           <div className="w-full max-w-md mx-auto mt-15 md:mt-5 justify-center items-center flex flex-col relative">
             <div className="flex flex-col top-12 absolute items-center justify-center bg-white p-4 rounded-4xl shadow-md">
               <img
-                src="/assets/logo.png"
+                src="/directorio/assets/logo.png"
                 alt="logo"
                 className="logo-qr absolute  z-20 h-20"
               />
@@ -186,7 +186,7 @@ export default function QrGenerator() {
                 className="flex items-center justify-center absolute descarga"
               >
                 <img
-                  src="/assets/descarga.svg"
+                  src="/directorio/assets/descarga.svg"
                   alt="descargar"
                   className="w-10 h-10 transition-all duration-500 ease-in-out animate-fadeIn"
                 />
