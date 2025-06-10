@@ -20,7 +20,7 @@ export default function QrGenerator() {
       imageOptions: {
         crossOrigin: "anonymous",
         margin: 3,
-        imageSize: 0.5,
+        imageSize: 0.4,
       },
       dotsOptions: {
         type: "dots",
@@ -113,7 +113,7 @@ export default function QrGenerator() {
     <div className="w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
       <form
         onSubmit={handleSubmit}
-        className="relative w-80 top-12 md:top-5 absolute z-2"
+        className=" w-80 top-12 md:top-5 absolute z-2"
       >
         <div className="flex flex-row relative">
           <input
