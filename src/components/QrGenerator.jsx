@@ -65,7 +65,7 @@ export default function QrGenerator() {
   };
 
   const generateQRFor = (persona) => {
-    const url = `https://itmgroup.mx/${persona.id}/`;
+    const url = `https://executive-cards.netlify.app/${persona.id}/`;
     if (qrInstance) {
       qrInstance.update({ data: url });
       const qrContainer = document.getElementById("styled-qr");
