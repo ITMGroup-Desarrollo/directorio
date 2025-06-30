@@ -44,13 +44,11 @@ import logo from "../assets/logo.svg";
             />
           </div>
           <div class="second-container w-full text-center justify-center items-center flex flex-col z-4 xl:mt-20">
-              <div class="text-container text-[var(--primary-color)] mb-3 text-center">
-                <p class="uppercase name font-bold">
-                  <strong>
+              <div class="text-container text-[var(--primary-color)] mb-3 flex flex-col text-center">
+                <p class="uppercase name self-center mt-0 my-4 font-bold  flex flex-wrap px-8">
                     {persona.nombre} {persona.apellido}
-                  </strong>
                 </p>
-                <p class="uppercase job">{persona.puesto}</p>
+                <p class="uppercase job self-center flex flex-wrap px-8">{persona.puesto}</p>
               </div>
               <div class="relative flex justify-center items-center mt-3 ">
                 <div class="icons-container grid grid-cols-2 grid-rows-2 md:flex md:flex-row justify-center gap-8 md:gap-16 ">
