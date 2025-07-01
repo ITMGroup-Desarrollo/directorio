@@ -29,7 +29,7 @@
 .job{
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 1.2rem !important;
+  font-size: .86rem !important;
   margin-top: -0.5rem !important;
 }
 .input-search{
@@ -43,7 +43,7 @@
 .name{
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 2rem !important;
+  font-size: 1.7rem !important;
 }
 .poppins{
   font-family: 'Poppins', sans-serif;
@@ -52,12 +52,12 @@
 .full-name{
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 2.5rem !important;
+  font-size: 1.7rem !important;
 }
 .item{
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 1rem !important;
+  font-size: .6rem !important;
 }
 .horizontal{
   margin-top: -1rem;

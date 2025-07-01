@@ -6,7 +6,7 @@ export const data = [
     puesto: "Commercial, Marketing and Retail Director",
     correo: "ftovar@itmgroup.mx",
     celular: "9988656453",
-    imagen: "/assets/images/fernanda-tovar.png",
+    imagen: "/directorio/assets/images/fernanda-tovar.png",
   },
   {
     id: "2",
@@ -15,7 +15,7 @@ export const data = [
     puesto: "Design Director",
     correo: "jteran@itmgroup.mx",
     celular: "9981671077",
-    imagen: "-",
+    imagen: "/directorio/assets/images/juanli-teran.png",
   },
   {
     id: "3",
@@ -24,7 +24,7 @@ export const data = [
     puesto: "Entertainment Director",
     correo: "emonteiro@itmgroup.mx",
     celular: "9982773668",
-    imagen: "/assets/images/ernesto-monteiro.png",
+    imagen: "/directorio/assets/images/ernesto-monteiro.png",
   },
   {
     id: "4",
@@ -33,7 +33,7 @@ export const data = [
     puesto: "Project Management Office",
     correo: "klopez@itmgroup.mx",
     celular: "9988749986",
-    imagen: "/assets/images/karen-lopez.png",
+    imagen: "/directorio/assets/images/karen-lopez.png",
   },
   {
     id: "6",
@@ -42,7 +42,7 @@ export const data = [
     puesto: "Corporate Vicepresident",
     correo: "mperrilliat@itmgroup.mx",
     celular: "-",
-    imagen: "/assets/images/mariana-perrilliat.png",
+    imagen: "/directorio/assets/images/mariana-perrilliat.png",
   },
   {
     id: "7",
@@ -51,7 +51,7 @@ export const data = [
     puesto: "CEO",
     correo: "mhh@itmgroup.mx",
     celular: "-",
-    imagen: "/assets/images/mauricio-hamui.png",
+    imagen: "/directorio/assets/images/mauricio-hamui.png",
   },
   {
     id: "8",
@@ -60,7 +60,7 @@ export const data = [
     puesto: "Finance & IT Vicepresident",
     correo: "fcastro@itmgroup.mx",
     celular: "9988300748",
-    imagen: "/assets/images/fernando-castro.png",
+    imagen: "/directorio/assets/images/fernando-castro.png",
   },
   {
     id: "9",
@@ -70,7 +70,7 @@ export const data = [
       "Senior Director of Human Capital and Organizational Transformation",
     correo: "mgalicia@itmgroup.mx",
     celular: "-",
-    imagen: "/assets/images/maribel-galicia.png",
+    imagen: "/directorio/assets/images/maribel-galicia.png",
   },
   {
     id: "10",
@@ -79,6 +79,6 @@ export const data = [
     puesto: "Corporate IT Director",
     correo: "iheras@itmgroup.mx",
     celular: "-",
-    imagen: "/assets/images/inaki-heras.png",
+    imagen: "/directorio/assets/images/inaki-heras.png",
   },
 ];
