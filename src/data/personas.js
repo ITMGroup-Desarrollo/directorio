@@ -180,4 +180,22 @@ export const data = [
   celular: "9983217493",
   imagen: "/directorio/assets/images/emelyne-arrieta.png",
 },
+{
+  id: "21",
+  nombre: "Adriana",
+  apellido: "Aguilar",
+  puesto: "Director of Tour and Traffic Operations",
+  correo: "aaguilar@itmgroup.mx",
+  celular: "9982462203",
+  imagen: "/directorio/assets/images/adriana-aguilar.png",
+},
+{
+  id: "22",
+  nombre: "Fernanda",
+  apellido: "Mexia",
+  puesto: "Bookings Manager",
+  correo: "fmexia@itmgroup.mx",
+  celular: "9988744418",
+  imagen: "/directorio/assets/images/fernanda-mexia.png",
+},
 ];
