@@ -171,10 +171,10 @@ export default function QrGenerator() {
               </div>
               {selectedPersona && (
                 <>
-                  <h2 className="px-10 uppercase mt-2 text-lg poppins mb-1 name text-white">
+                  <h2 className="px-10 uppercase  mt-2 text-lg  poppins full-name mb-3 name text-white">
                     {selectedPersona.nombre} {selectedPersona.apellido}
                   </h2>
-                  <h3 className="px-10 uppercase text-xl job poppins mb-2 text-white">
+                  <h3 className="px-10 uppercase text-xl job poppins job mb-2 text-white">
                     {selectedPersona.puesto}
                   </h3>
                 </>
