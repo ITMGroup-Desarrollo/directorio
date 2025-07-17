@@ -92,22 +92,47 @@ export default function QrGenerator() {
     generateQRFor(persona);
   };
 
-  const handleDownload = async () => {
-    const area = document.getElementById("download-area");
-    if (!area) return;
+const handleDownload = async () => {
+  const area = document.getElementById("download-area");
+  if (!area) return;
 
-    const logoImg = new Image();
-    logoImg.src = "/directorio/assets/logo.png";
-    logoImg.crossOrigin = "anonymous";
+  // Clonar el área a capturar
+  const cloned = area.cloneNode(true);
+  cloned.style.width = "375px";
+  cloned.style.height = "667px";
+  cloned.style.position = "absolute";
+  cloned.style.top = "-10000px"; // fuera de pantalla
+  cloned.style.left = "0";
+  cloned.style.transform = "scale(1)";
+  cloned.style.zoom = "1";
+  cloned.style.zIndex = "-9999"; // no interfiere
+const downloadButton = cloned.querySelector(".descarga");
+if (downloadButton) {
+  downloadButton.style.display = "none";
+}
+  document.body.appendChild(cloned); // Añadir al DOM temporalmente
 
-    logoImg.onload = async () => {
-      const canvas = await html2canvas(area);
-      const link = document.createElement("a");
-      link.download = `qr-${query.trim()}.png`;
-      link.href = canvas.toDataURL("image/png");
-      link.click();
-    };
-  };
+  // Esperar a que cargue cualquier imagen interna si es necesario
+  await new Promise((r) => setTimeout(r, 100));
+
+  const canvas = await html2canvas(cloned, {
+    useCORS: true,
+    scale: 2,
+    width: 375,
+    height: 667,
+    windowWidth: 375,
+    windowHeight: 667,
+  });
+
+  document.body.removeChild(cloned); // Limpiar el DOM
+
+  const link = document.createElement("a");
+  link.download = `qr-${query.trim()}.png`;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+};
+
+
 
   return (
     <div className="w-screen h-screen mx-auto text-center items-center flex flex-col  z-0">
@@ -171,10 +196,10 @@ export default function QrGenerator() {
               </div>
               {selectedPersona && (
                 <>
-                  <h2 className="px-10 uppercase  mt-2 text-lg  poppins full-name mb-3 name text-white">
+                  <h2 className="px-10 uppercase  mt-2 text-lg  poppins full-name pb-4 name text-white">
                     {selectedPersona.nombre} {selectedPersona.apellido}
                   </h2>
-                  <h3 className="px-10 uppercase text-xl job poppins job mb-2 text-white">
+                  <h3 className="px-10 uppercase text-xl  poppins job mb-2 text-white">
                     {selectedPersona.puesto}
                   </h3>
                 </>

@@ -198,4 +198,13 @@ export const data = [
   celular: "9988744418",
   imagen: "/directorio/assets/images/fernanda-mexia.png",
 },
+{
+  id: "23",
+  nombre: "Ana Paola",
+  apellido: "de la Garza",
+  puesto: "Marketing Manager Ports and Corporate",
+  correo: "pgarza@itmgroup.mx",
+  celular: "9982025919",
+  imagen: "/directorio/assets/images/paola-garza.png",
+},
 ];
