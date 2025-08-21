@@ -200,9 +200,9 @@ export const data = [
 },
 {
   id: "23",
-  nombre: "Ana Paola",
+  nombre: "Paola",
   apellido: "de la Garza",
-  puesto: "Marketing Manager Ports and Corporate",
+  puesto: "Marketing Manager",
   correo: "pgarza@itmgroup.mx",
   celular: "9982025919",
   imagen: "/directorio/assets/images/paola-garza.png",
