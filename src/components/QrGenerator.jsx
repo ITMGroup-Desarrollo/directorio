@@ -131,6 +131,13 @@ if (downloadButton) {
   link.href = canvas.toDataURL("image/png");
   link.click();
 };
+const handleGoogleWallet = () => {
+  if (!selectedPersona) return;
+  const url = `https://backend-python-test.onrender.com/google-pass?persona=${selectedPersona.id}&nombre=${encodeURIComponent(
+    selectedPersona.nombre + " " + selectedPersona.apellido
+  )}&cargo=${encodeURIComponent(selectedPersona.puesto)}`;
+  window.open(url, "_blank"); 
+};
 
 
 
@@ -208,13 +215,25 @@ if (downloadButton) {
               <button
                 type="button"
                 onClick={handleDownload}
-                className="flex items-center justify-center absolute descarga"
+                className="flex items-center justify-center absolute descarga -bottom-15"
               >
                 <img
                   src="/directorio/assets/descarga.svg"
                   alt="descargar"
                   className="w-10 h-10 transition-all duration-500 ease-in-out animate-fadeIn"
                 />
+              </button>
+              <button
+                type="button"
+                onClick={handleGoogleWallet}
+                className="flex flex-col items-center justify-center absolute wallet right-5 -bottom-20"
+              >
+                <img
+                  src="/directorio/assets/wallet.svg"
+                  alt="Google Wallet"
+                  className="w-13 h-13 transition-all duration-500 ease-in-out animate-fadeIn"
+                />
+                <p className="text-white">Google Wallet</p>
               </button>
             </div>
           )}

@@ -37,9 +37,6 @@
   font-weight: 400;
   font-size: 1rem !important;
 }
-.descarga{
-  bottom: -10% !important;
-}
 .name{
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -131,9 +128,6 @@
   }
   .image-container{
     height: 50% !important;
-  }
-  .descarga{
-    bottom: -10% !important;
   }
   .logo{
     margin-top: 0rem !important;
