@@ -219,7 +219,7 @@ const handleAppleWallet = () => {
                 </>
               )}
 
-              <div className="Buttons-container flex flex-row justify-center mt-6 lg:mt-0 w-full gap-4 relative">
+              <div className="button-container flex flex-row justify-center mt-6 lg:mt-0 w-full gap-8 relative">
                 <button
                 type="button"
                 onClick={handleAppleWallet}
