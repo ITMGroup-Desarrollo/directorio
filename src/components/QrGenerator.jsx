@@ -210,16 +210,16 @@ const handleAppleWallet = () => {
               </div>
               {selectedPersona && (
                 <>
-                  <h2 className="px-10 uppercase  mt-2 text-lg  poppins full-name pb-4 name text-white">
+                  <h2 className="px-5 uppercase  mt-2 text-lg  poppins full-name pb-4 name text-white">
                     {selectedPersona.nombre} {selectedPersona.apellido}
                   </h2>
-                  <h3 className="px-10 uppercase text-xl  poppins job mb-2 text-white">
+                  <h3 className="px-5 uppercase text-xl  poppins job mb-2 text-white">
                     {selectedPersona.puesto}
                   </h3>
                 </>
               )}
 
-              <div className="button-container flex flex-row justify-center mt-6 lg:mt-0 w-full gap-8 relative">
+              <div className="button-container flex flex-row justify-center mt-2 lg:mt-0 w-full gap-8 relative">
                 <button
                 type="button"
                 onClick={handleAppleWallet}
