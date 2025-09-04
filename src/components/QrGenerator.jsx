@@ -138,6 +138,13 @@ const handleGoogleWallet = () => {
   )}&cargo=${encodeURIComponent(selectedPersona.puesto)}`;
   window.open(url, "_blank"); 
 };
+const handleAppleWallet = () => {
+  if (!selectedPersona) return;
+  const url = `https://backend-python-test.onrender.com/apple-pass?persona=${selectedPersona.id}&nombre=${encodeURIComponent(
+    selectedPersona.nombre + " " + selectedPersona.apellido
+  )}&cargo=${encodeURIComponent(selectedPersona.puesto)}`;
+  window.open(url, "_blank"); 
+};
 
 
 
@@ -212,29 +219,44 @@ const handleGoogleWallet = () => {
                 </>
               )}
 
-              <button
+              <div className="Buttons-container flex flex-row justify-center mt-6 lg:mt-0 w-full gap-4 relative">
+                <button
                 type="button"
-                onClick={handleDownload}
-                className="flex items-center justify-center absolute descarga -bottom-15"
+                onClick={handleAppleWallet}
+                className="flex lg:hidden flex-col items-center justify-center apple-wallet "
               >
                 <img
-                  src="/directorio/assets/descarga.svg"
+                  src="/directorio/assets/apple-wallet.svg"
                   alt="descargar"
                   className="w-10 h-10 transition-all duration-500 ease-in-out animate-fadeIn"
                 />
+                <p className="text-white">Apple Wallet</p>
+              </button>
+              <button
+                type="button"
+                onClick={handleDownload}
+                className="flex flex-col items-center justify-center  descarga "
+              >
+                <img
+                  src="/directorio/assets/descarga-black.svg"
+                  alt="descargar"
+                  className="w-10 h-10 transition-all duration-500 ease-in-out animate-fadeIn"
+                />
+                <p className="text-white">Download</p>
               </button>
               <button
                 type="button"
                 onClick={handleGoogleWallet}
-                className="flex flex-col items-center justify-center absolute wallet right-5 -bottom-20"
+                className="flex flex-col lg:hidden items-center justify-center  google-wallet "
               >
                 <img
-                  src="/directorio/assets/wallet.svg"
+                  src="/directorio/assets/google-wallet.svg"
                   alt="Google Wallet"
-                  className="w-13 h-13 transition-all duration-500 ease-in-out animate-fadeIn"
+                  className="w-10 h-10 transition-all duration-500 ease-in-out animate-fadeIn"
                 />
                 <p className="text-white">Google Wallet</p>
               </button>
+              </div>
             </div>
           )}
         </div>
