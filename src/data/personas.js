@@ -76,7 +76,7 @@ export const data = [
     nombre: "Maribel",
     apellido: "Galicia",
     puesto:
-      "Senior Director of Human Capital and Organizational Transformation",
+      "Sr Director of Human Capital and Organizational Transformation",
     correo: "mgalicia@itmgroup.mx",
     celular: "5539660271",
     imagen: "/directorio/assets/images/maribel-galicia.png",
@@ -157,7 +157,7 @@ export const data = [
   id: "18",
   nombre: "Carla",
   apellido: "Desentis",
-  puesto: "BSI Director",
+  puesto: "Corporate Strategy & Legal Director",
   correo: "cdesentis@itmgroup.mx",
   celular: "9988743398",
   imagen: "/directorio/assets/images/carla-desentis.png",
