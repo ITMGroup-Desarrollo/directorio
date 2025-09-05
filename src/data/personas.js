@@ -11,7 +11,7 @@ export const data = [
   {
     id: "2",
     nombre: "Juanli",
-    apellido: "Terán",
+    apellido: "Teran",
     puesto: "Marketing Director",
     correo: "jteran@itmgroup.mx",
     celular: "9981671077",
@@ -29,7 +29,7 @@ export const data = [
   {
     id: "4",
     nombre: "Karen",
-    apellido: "López",
+    apellido: "Lopez",
     puesto: "Project Management Office",
     correo: "klopez@itmgroup.mx",
     celular: "9988749986",
@@ -110,8 +110,8 @@ export const data = [
 },
 {
   id: "13",
-  nombre: "Germán",
-  apellido: "Ramírez",
+  nombre: "German",
+  apellido: "Ramirez",
   puesto: "Finance Corporate Director",
   correo: "gramirez@itmgroup.mx",
   celular: "9982423937",
